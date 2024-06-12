@@ -15,7 +15,9 @@ const Index = () => {
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={8}>
         <Heading as="h1" size="2xl">
-          John Doe
+          <Text as="span" fontWeight="bold">
+            John Doe
+          </Text>
         </Heading>
         <Text fontSize="lg">3D Artist & Web Developer</Text>
         <Box width="100%" height="400px">
