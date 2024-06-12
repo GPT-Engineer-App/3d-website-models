@@ -6,7 +6,9 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IconButton } from "@chakra-ui/react";
 
 const Model = ({ path }) => {
-  const { scene } = useGLTF(path);
+  const { scene } = useGLTF(path, true, (error) => {
+    console.error("Error loading GLTF model:", error);
+  });
   return <primitive object={scene} />;
 };
 
@@ -24,7 +26,7 @@ const Index = () => {
           <Canvas>
             <ambientLight intensity={0.5} />
             <directionalLight position={[0, 0, 5]} />
-            <Model path="GPTENG:get_model('3d model of a computer')" />
+            <Model path="path/to/your/model.gltf" />
             <OrbitControls />
           </Canvas>
         </Box>
